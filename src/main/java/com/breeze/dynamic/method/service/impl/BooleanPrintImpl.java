@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 @Service("booleanPrintImpl")
 public class BooleanPrintImpl implements DynamicMethodService {
 
+    /**
+     * spring容器初始化会调用无参构造，构造方法调用静态方法，本地缓存Map赋值
+     */
     public BooleanPrintImpl() {
         DynamicMethodServiceImpl.registerHandler(AppConsts.BOOLEAN_PRINT_METHOD, this);
     }
